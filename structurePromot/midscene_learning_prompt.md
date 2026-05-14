@@ -105,23 +105,6 @@ GitHub 项目：**`web-infra-dev/midscene`**（字节跳动 Web Infra 团队开�
 - E4. **纯视觉 vs 混合模态（SOM, Set-of-Mark）**：极端复杂 UI 下是否偷偷混入 DOM 辅助；架构上是否预留了 SOM 标记法
 - E5. **异步状态管理 & "死锁"**：Loading 转 10 秒时如何判定"页面加载完毕"；纯视觉 vs DOM `networkidle` vs Visual Diff 的平衡
 
-# 推荐的 MD 拆分方案（先发给我确认，再开始写）
-
-我建议的拆分如下（你可以提出更好的方案，但请先和我对齐）：
-
-| 序号 | 文件名 | 主题 | 是否含实操 |
-|---|---|---|---|
-| 00 | `00_Overview.md` | 项目定位、视觉驱动哲学、与传统 UI 自动化对比 | ❌（纯理论） |
-| 01 | `01_Architecture.md` | Monorepo 结构、包依赖图、端到端数据流、本地环境搭建 | ✅（跑通 Hello World） |
-| 02 | `02_PromptDesign.md` | Prompt 模板模块（覆盖 A1–A4） | ✅（手动调用 Prompt 看输出） |
-| 03 | `03_ActionExecutor.md` | 执行器流 + 规划器 + 重试（覆盖 B1–B4） | ✅（断点单步走 Executor） |
-| 04 | `04_DriverAdapters.md` | 跨端驱动抽象层（覆盖 B3 深入 + D5） | ✅（Web → Android demo 对照） |
-| 05 | `05_VisionPipeline.md` | 图像预处理 + 坐标映射（覆盖 C1–C4） | ✅（手写 Resize + DPR 校验脚本） |
-| 06 | `06_CacheAndReplay.md` | 缓存与回放机制（覆盖 B5 + D2 部分） | ✅（开启 / 关闭缓存对比耗时） |
-| 07 | `07_DeterminismFeedback.md` | 确定性、幻觉对抗、视觉断言、回溯（覆盖 D1, D3） | ✅（构造 UI 微变化测试自愈） |
-| 08 | `08_AdvancedChallenges.md` | 长序列规划、跨平台、PII、复杂手势、SOM、模型漂移、异步死锁（覆盖 D4 + E 全部） | 部分（手势 demo） |
-| 09 | `09_Capstone.md` | 综合实战：用 Midscene 写一个真实业务场景（如电商下单全流程）的端到端测试，含缓存 + 断言 + 失败重试 | ✅（核心实操） |
-
 # 工作流程（请严格按此节奏，不要一次性产出全部）
 
 **Step 1**：先回复我一个**"拆分方案确认稿"**，包含：
